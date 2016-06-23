@@ -22,6 +22,7 @@ download_threescale_config() {
         # lets use the 8080 port instead of 80
 	sed -E -i "s/listen\s+80;/listen 8080;/g" nginx_*.conf 
 	sed -E -i "/server\s+\{/a access_log /dev/stdout combined;" nginx_*.conf
+	sed -E -i "s/resolver 8.8.8.8 8.8.4.4;//g" /opt/openresty/nginx/conf/nginx.conf
 }
 
 deploy_threescale_config() {
