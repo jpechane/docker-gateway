@@ -59,6 +59,7 @@ compare_threescale_config() {
 }
 
 sed -E -i "s/listen\s+80;/listen 8080;/g" /opt/openresty/nginx/conf/nginx.conf
+sed -E -i "s/resolver 8.8.8.8 8.8.4.4;//g" /opt/openresty/nginx/conf/nginx.conf
 
 nginx -g "daemon off; error_log stderr info;" &
 
